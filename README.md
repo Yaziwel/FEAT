@@ -114,7 +114,6 @@ As we follow the work Endora, you can run the downstream task the same way as ho
 ```
 ## TODO List
 - [X] Release code for FEAT
-- [] Upload the ckpt for FEAT-S/L.
 
 ## Acknowledgements
 Greatly appreciate the tremendous effort for the following projects!
