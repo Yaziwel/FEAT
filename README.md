@@ -6,9 +6,11 @@
 
 FEAT: Full-Dimensional Efficient Attention Transformer for Medical Video Generation (MICCAI 2025) (Early Accept (9%))
 
-<video controls loop>
-  <source src="https://github.com/Yaziwel/FEAT/releases/download/v1.0.0/example.mp4" type="video/mp4">
-</video>
+
+
+https://github.com/user-attachments/assets/c0b3a5a7-8ef0-4524-a057-369278a9fb16
+
+
 
 
 ## Setup
