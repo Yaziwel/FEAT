@@ -100,7 +100,7 @@ After the DDP sample, there will be more than 3125 videos generated to calculate
 
 ## 📏Evaluation
 
-The metrics we calculated in Colonoscopic dataset are below:
+The metrics we calculated in Colonoscopic dataset:
 
 | Method        | FVD↓   | CD-FVD↓ | FID↓   | IS↑  |
 | ------------- | ------ | ------- | ------ | ---- |
@@ -149,8 +149,8 @@ As we follow the work Endora, you can run the downstream task the same way as ho
 |FEAT-S (ours)| 89.9 |
 |FEAT-L (ours)| 91.3 |
 
-```
 ## 🎈Acknowledgements
+
 Greatly appreciate the tremendous effort for the following projects!
 - [Endora](https://github.com/CUHK-AIM-Group/Endora)
 - [Endo-FM](https://github.com/openmedlab/Endo-FM)
@@ -160,7 +160,9 @@ Greatly appreciate the tremendous effort for the following projects!
 - [Stylegan-v](https://github.com/universome/stylegan-v)
 
 ## 📜Citation
+
 If you find FEAT useful in your research, please consider citing:
+
 ```
 @article{wang2025feat,
   author    = {Huihan Wang and Zhiwen Yang and Hui Zhang and Dan Zhao and Bingzheng Wei and Yan Xu},
@@ -168,3 +170,5 @@ If you find FEAT useful in your research, please consider citing:
   journal   = {arXiv preprint arXiv:xxxx},
   year      = {2025}
 }
+```
+
