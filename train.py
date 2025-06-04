@@ -211,36 +211,35 @@ def main(args, port):
     resume_step = 0
     # Potentially load in the weights and states from a previous save
     if args.resume_from_checkpoint:
-        if rank == 0:
-            checkpoints = sorted(glob(f"{checkpoint_dir}/*.pt"),
-                                 key=lambda x: int(x.split("/")[-1].split(".")[0]))
-            if checkpoints:
-                checkpoint_path = checkpoints[-1]
-                logger.info(f"Resuming from checkpoint {checkpoint_path}")
+        checkpoints = sorted(glob(f"{checkpoint_dir}/*.pt"),
+                                key=lambda x: int(x.split("/")[-1].split(".")[0]))
+        if checkpoints:
+            checkpoint_path = checkpoints[-1]
+            logger.info(f"Resuming from checkpoint {checkpoint_path}")
 
-                train_steps = int(checkpoint_path.split("/")[-1].split(".")[0])
+            train_steps = int(checkpoint_path.split("/")[-1].split(".")[0])
 
-                checkpoint = torch.load(checkpoint_path, map_location="cpu")
+            checkpoint = torch.load(checkpoint_path, map_location="cpu")
 
-                model.module.load_state_dict(checkpoint["model"])
-                ema.module.load_state_dict(checkpoint['ema'])
+            model.module.load_state_dict(checkpoint["model"])
+            ema.module.load_state_dict(checkpoint['ema'])
 
-                num_update_steps_per_epoch = len(loader)
-                first_epoch = train_steps // num_update_steps_per_epoch
-                resume_step = train_steps % num_update_steps_per_epoch
+            num_update_steps_per_epoch = len(loader)
+            first_epoch = train_steps // num_update_steps_per_epoch
+            resume_step = train_steps % num_update_steps_per_epoch
 
-                opt = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=0).load_state_dict(checkpoint['opt'])
-                lr_scheduler = get_scheduler(
-                    name="constant",
-                    optimizer=opt,
-                    num_warmup_steps=args.lr_warmup_steps * args.gradient_accumulation_steps,
-                    num_training_steps=args.max_train_steps * args.gradient_accumulation_steps,
-                )
+            opt = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=0).load_state_dict(checkpoint['opt'])
+            lr_scheduler = get_scheduler(
+                name="constant",
+                optimizer=opt,
+                num_warmup_steps=args.lr_warmup_steps * args.gradient_accumulation_steps,
+                num_training_steps=args.max_train_steps * args.gradient_accumulation_steps,
+            )
 
-                lr_scheduler.last_epoch = train_steps - 1
+            lr_scheduler.last_epoch = train_steps - 1
 
-                logger.info(
-                    f"Resuming training from step {train_steps}, epoch {first_epoch}, step_in_epoch {resume_step}")
+            logger.info(
+                f"Resuming training from step {train_steps}, epoch {first_epoch}, step_in_epoch {resume_step}")
         dist.barrier()
 
     for epoch in range(first_epoch, num_train_epochs):
@@ -315,10 +314,10 @@ def main(args, port):
             if train_steps % args.ckpt_every == 0 and train_steps > 0:
                 if rank == 0:
                     checkpoint = {
-                        "model": model.module.state_dict(),
+                        # "model": model.module.state_dict(),
                         "ema": ema.state_dict(),
-                        "opt": opt.state_dict(),
-                        "args": args
+                        # "opt": opt.state_dict(),
+                        # "args": args
                     }
 
                     checkpoint_path = f"{checkpoint_dir}/{train_steps:07d}.pt"
