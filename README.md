@@ -111,7 +111,7 @@ The metrics we calculated in Colonoscopic dataset are below:
 | FEAT-S (Ours) | 415.4  | 444.0   | 13.34  | 3.96 |
 | FEAT-L (Ours) | 351.1  | 397.0   | 12.31  | 4.01 |
 
-Before calculating the metrics in our codes, you may need the weights for several models, which can be downloaded from the following links:
+Before calculating the metrics in our code, you may need the weights for several models, which can be downloaded from the following links:
 
 - [Inception v3](https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/metrics/inception-2015-12-05.pt) for calculating FID and IS.
 - [I3D](https://www.dropbox.com/s/ge9e5ujwgetktms/i3d_torchscript.pt?dl=1) for calculating FVD.
