@@ -100,7 +100,7 @@ After the DDP sample, there will be more than 3125 videos generated to calculate
 
 ## 📏Evaluation
 
-The metrics we calculated in Colonoscopic dataset:
+The metrics we calculated in Colonoscopic dataset are below:
 
 | Method        | FVD↓   | CD-FVD↓ | FID↓   | IS↑  |
 | ------------- | ------ | ------- | ------ | ---- |
