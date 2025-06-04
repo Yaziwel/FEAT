@@ -1,8 +1,0 @@
-*.pyc
-
-LVDM/lvdm.egg-info/dependency_links.txt
-*.DS_Store
-
-*.log
-*.yaml
-*.egg-info
