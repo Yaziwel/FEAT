@@ -75,7 +75,7 @@ bash train_scripts/kva/train_kva.sh
 
 ## 🎇Sampling
 
-You can directly sample the endoscopy videos from the checkpoint model. Here is an example for quick usage for using our **pre-trained models**:
+You can directly sample the medical videos from the checkpoint model. Here is an example for quick usage for using our **pre-trained models**:
 
 1. Download the pre-trained weights from [here](https://drive.google.com/drive/folders/1OGAcuYwTc5KicspmTBniRuSWgy-XwebF?usp=sharing) and put them to specific path defined in the configs.
 2. Run [`sample.py`](sample/sample.py) by the following scripts to customize the various arguments like adjusting sampling steps. 
