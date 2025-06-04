@@ -1,0 +1,17 @@
+timm
+diffusers[torch]==0.24.0
+huggingface-hub==0.24.5
+accelerate
+tensorboard
+einops
+transformers
+av
+scikit-image
+decord
+pandas
+imageio-ffmpeg
+omegaconf
+moviepy==1.0.3
+torchmetrics
+click
+cd-fvd
