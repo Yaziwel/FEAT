@@ -21,10 +21,7 @@ import sys
 
 sys.path.append(os.path.split(sys.path[0])[0])
 
-from rwkv.Restore_RWKV import RWKV6Block, RWKV6STBlock, RWKV6FPSBlock, RWKV6ModBlock, Conv3DMod
 from rwkv.Restore_RWKV import Block as RWKVBlock
-from rwkv.Restore_RWKV import BlockMod as RWKVModBlock
-from rwkv.Restore_RWKV import BlockAddMod as RWKVAddModBlock
 from rwkv.restormer_arch import TransformerBlockControl as ReBlock
 
 
