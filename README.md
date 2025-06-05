@@ -4,7 +4,7 @@
 
 ### [ArXiv Paper](https://arxiv.org/abs/)
 
-[Huihan Wang]()<sup>1* </sup> [Zhiwen Yang]()<sup>1*</sup> [Hui Zhang]()<sup>2</sup> [Dan Zhao]()<sup>3</sup> [Bingzheng Wei]()<sup>4</sup> [Yan Xu](https://bme.buaa.edu.cn/teacherInfo.aspx?catID=7&subcatID=141&curID=487)<sup>1</sup> ✉</sup>
+[Huihan Wang]()<sup>1* </sup> [Zhiwen Yang]()<sup>1*</sup> [Hui Zhang]()<sup>2</sup> [Dan Zhao]()<sup>3</sup> [Bingzheng Wei]()<sup>4</sup> [Yan Xu](https://bme.buaa.edu.cn/teacherInfo.aspx?catID=7&subcatID=141&curID=487)<sup>1</sup> <sup>✉</sup>
 
 <sup>1</sup>BUAA &emsp; <sup>2</sup>THU &emsp; <sup>3</sup>PUMC &emsp; <sup>4</sup>ByteDance &emsp;
 
@@ -153,7 +153,7 @@ Greatly appreciate the tremendous effort for the following projects!
 - [Latte](https://github.com/Vchitect/Latte)
 - [EndoGaussian](https://github.com/yifliu3/EndoGaussian)
 - [CoMatch](https://github.com/salesforce/CoMatch)
-- [Stylegan-v](https://github.com/universome/stylegan-v)
+- [StyleGAN-V](https://github.com/universome/stylegan-v)
 
 ## 📜Citation
 
