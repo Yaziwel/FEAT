@@ -10,7 +10,7 @@ This paper has been early accepted by MICCAI 2025 (top 9%)
 
 <sup>\*</sup> Equal Contributions. <sup>✉</sup> Corresponding Author. 
 
-![](.\assets\fig_experiment.png)
+![](./assets/fig_experiment.png)
 
 https://github.com/user-attachments/assets/c0b3a5a7-8ef0-4524-a057-369278a9fb16
 
