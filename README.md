@@ -1,8 +1,6 @@
 # FEAT：Full-Dimensional Efficient Attention Transformer for Medical Video Generation (MICCAI 2025)
 
-### **This paper has been early accepted by MICCAI 2025 (top 9%)**
-
-### [ArXiv Paper](https://arxiv.org/abs/)
+### **This paper has been early accepted by MICCAI 2025 (top 9%)**[![arXiv](https://img.shields.io/badge/arXiv-b31b1b.svg)](https://arxiv.org/abs/2506.04956)
 
 [Huihan Wang]()<sup>1* </sup> [Zhiwen Yang]()<sup>1*</sup> [Hui Zhang]()<sup>2</sup> [Dan Zhao]()<sup>3</sup> [Bingzheng Wei]()<sup>4</sup> [Yan Xu](https://bme.buaa.edu.cn/teacherInfo.aspx?catID=7&subcatID=141&curID=487)<sup>1</sup> <sup>✉</sup>
 
@@ -163,7 +161,7 @@ If you find FEAT useful in your research, please consider citing:
 @article{wang2025feat,
   author    = {Huihan Wang and Zhiwen Yang and Hui Zhang and Dan Zhao and Bingzheng Wei and Yan Xu},
   title     = {FEAT: Full-Dimensional Efficient Attention Transformer for Medical Video Generation},
-  journal   = {arXiv preprint arXiv:xxxx},
+  journal   = {arXiv preprint arXiv:2506.04956},
   year      = {2025}
 }
 ```
