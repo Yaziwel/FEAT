@@ -235,10 +235,10 @@ class FEAT(nn.Module):
         if self.skip_connect:
             skip_res = self.res_conv(x)
         x = self.x_embedder(x)
-        _, t, _ = x.shape
+        _, l, _ = x.shape
         t = self.t_embedder(t, use_fp16=use_fp16)
         timestep_spatial = repeat(t, 'n d -> (n c) d', c=frames)
-        timestep_temp = repeat(t, 'n d -> (n c) d', c=t)
+        timestep_temp = repeat(t, 'n d -> (n c) d', c=l)
         timestep_channel = repeat(t, 'n d -> (n c) d', c=frames)
 
         res = x
