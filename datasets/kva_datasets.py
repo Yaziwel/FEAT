@@ -19,7 +19,8 @@ def get_filelist(file_path):
     Filelist = []
     for home, dirs, files in os.walk(file_path):
         for filename in files:
-            Filelist.append(os.path.join(home, filename))
+            if filename.lower().endswith('.mp4'):
+                Filelist.append(os.path.join(home, filename))
             # Filelist.append( filename)
     return Filelist
 

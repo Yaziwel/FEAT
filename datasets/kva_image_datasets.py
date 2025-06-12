@@ -22,7 +22,8 @@ def get_filelist(file_path):
     for home, dirs, files in os.walk(file_path):
         for filename in files:
             # 文件名列表，包含完整路径
-            Filelist.append(os.path.join(home, filename))
+            if filename.lower().endswith('.mp4'):
+                Filelist.append(os.path.join(home, filename))
             # # 文件名列表，只包含文件名
             # Filelist.append( filename)
     return Filelist
