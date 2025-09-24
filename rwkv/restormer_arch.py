@@ -57,10 +57,8 @@ class Attention(nn.Module):
         self.qkv = nn.Conv2d(dim, dim * 3, kernel_size=1, bias=bias)
         self.qkv_dwconv = nn.Conv2d(dim * 3, dim * 3, kernel_size=3, stride=1, padding=1, groups=dim * 3, bias=bias)
         self.project_out = nn.Conv2d(dim, dim, kernel_size=1, bias=bias)
-        with torch.no_grad():
-            self.alpha = nn.Parameter(torch.zeros(2 * dim))
 
-    def forward(self, x, resolution=None, res=None):
+    def forward(self, x, resolution=None):
         h, w = resolution
         x = rearrange(x, 'b (h w) c -> b c h w', h=h, w=w)
         b, c, h, w = x.shape
@@ -70,11 +68,6 @@ class Attention(nn.Module):
         q = q.contiguous()
         k = k.contiguous()
         v = v.contiguous()
-        if res is not None:
-            res = rearrange(res, 'b (h w) c -> b c h w', h=h, w=w)
-            res_v = res - v
-            v = v + res * self.alpha[0]
-            res = res_v
 
         q = rearrange(q, 'b (head c) h w -> b head c (h w)', head=self.num_heads)
         k = rearrange(k, 'b (head c) h w -> b head c (h w)', head=self.num_heads)
@@ -89,8 +82,6 @@ class Attention(nn.Module):
         out = (attn @ v)
 
         out = rearrange(out, 'b head c (h w) -> b (head c) h w', head=self.num_heads, h=h, w=w)
-        if res is not None:
-            out = out + res * self.alpha[1]
         out = self.project_out(out)
         out = rearrange(out, 'b c h w -> b (h w) c')
         return out
