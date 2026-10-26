@@ -28,9 +28,17 @@ pip install -r requirements.txt
 ```
 
 ## 📚Data Preparation
-**Colonoscopic**:  The dataset provided by [paper](https://ieeexplore.ieee.org/abstract/document/7442848) can be found [here](http://www.depeca.uah.es/colonoscopy_dataset/). You can directly use the [processed video data](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/ES_hCHb2XWFJgsK4hrKUnNUBx3fl6QI3yyk9ImP4AkkRVw?e=LC4DU5) by *[Endo-FM](https://github.com/openmedlab/Endo-FM)* without further data processing.
+**Colonoscopic**:  The dataset provided by [paper](https://ieeexplore.ieee.org/abstract/document/7442848) can be found [here](http://www.depeca.uah.es/colonoscopy_dataset/). You can directly use the [processed video data](https://huggingface.co/datasets/WTHH031230/FEAT-Dataset/blob/main/Colonoscopic.tar) (originally processed by *[Endo-FM](https://github.com/openmedlab/Endo-FM)*) hosted on our [Hugging Face Dataset](https://huggingface.co/datasets/WTHH031230/FEAT-Dataset) without further data processing.
 
-**Kvasir-Capsule**:  The dataset provided by [paper](https://www.nature.com/articles/s41597-021-00920-z) can be found [here](https://datasets.simula.no/kvasir-capsule/). You can directly use the [processed video data](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155167044_link_cuhk_edu_hk/EQhyk3_yz5pAtdpKVFU93S0BfPfTNpblPFXTHaW-BIjV-Q?e=9duP5z) by *[Endo-FM](https://github.com/openmedlab/Endo-FM)* without further data processing.
+**Kvasir-Capsule**:  The dataset provided by [paper](https://www.nature.com/articles/s41597-021-00920-z) can be found [here](https://datasets.simula.no/kvasir-capsule/). You can directly use the [processed video data](https://huggingface.co/datasets/WTHH031230/FEAT-Dataset/blob/main/Kvasir-Capsule.tar) (originally processed by *[Endo-FM](https://github.com/openmedlab/Endo-FM)*) hosted on our [Hugging Face Dataset](https://huggingface.co/datasets/WTHH031230/FEAT-Dataset) without further data processing.
+
+You can download and extract the datasets into `./data` via **huggingface_hub**:
+```bash
+mkdir -p ./data
+huggingface-cli download WTHH031230/FEAT-Dataset Colonoscopic.tar Kvasir-Capsule.tar --repo-type dataset --local-dir ./data
+tar -xf ./data/Colonoscopic.tar -C ./data
+tar -xf ./data/Kvasir-Capsule.tar -C ./data
+```
 
 Please run [`process_data.py`](process_data.py) and [`process_list.py`](process_list.py) to get the split frames and the corresponding list at first.
 ```cmd
